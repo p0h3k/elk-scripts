@@ -66,7 +66,8 @@ sudo filebeat modules enable auditd
 sudo filebeat modules enable suricata
 sudo filebeat modules enable osquery
 
-sudo filebeat setup --dashboards --enable-all-filesets --index-management -e
+sudo find /etc/filebeat/modules.d -type f -exec sudo sed -i 's/enabled: false/enabled: true/g' {} \;
 
-sudo systemctl start filebeat
-sudo systemctl enable filebeat
+sudo filebeat setup -e
+
+sudo service filebeat start
