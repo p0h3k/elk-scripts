@@ -2,7 +2,7 @@ version=8.10.2
 
 sudo apt-get install wget rpm jq -y
 
-#wget http://mirrors.aliyun.com/elasticstack/yum/elastic-8.x/$version/filebeat-$version-x86_64.rpm
+wget http://mirrors.aliyun.com/elasticstack/yum/elastic-8.x/$version/filebeat-$version-x86_64.rpm
 
 sudo rpm --install --nodeps filebeat-$version-x86_64.rpm
 
